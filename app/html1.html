@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html>
+<head>
+    <style>
+
+        fieldset{
+            background-color:lightyellow;
+            border:10px solid yellow;
+            margin-bottom:10px;
+            width: 720px;
+        }
+        label{
+            display: inline-block;
+            width: 180px;
+            text-align: right;
+            vertical-align: text-top;
+        }
+        label>#gender{
+            width: 100px;
+        }
+        label:hover {
+            font-size:2em;
+            font: bold;
+        }
+
+        #item{
+            display: inline;
+        }
+
+        .clr1{
+            background: red;
+            color: white;
+            width: 5px;
+            height: 2px;
+        }
+        .clr2{
+            background: blueviolet;
+            color: white;
+            width: 10px;
+            height: 20px
+        }
+
+        textarea{
+            width:360px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website</h1>
+
+<form action="destination" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Your Face:</legend>  <br>
+        <label for ="your Image">your Image: </label>
+        <input type="file" name="file to upload" id="your image" accept="imagem/*" onchange="loadFile(event)"><br><br>
+        <label for ="Preview">Image Preview:</label>
+        <img id="Preview" alt="myImage"/>
+    </fieldset>
+
+</form>
+<br><br>
+<form>
+    <fieldset>
+        <legend>Your General Details:</legend>
+        <label for ="name">Name :</label>
+        <input type= "text" id ="name" required>   <br> <br>
+
+        <label id="gender" > Gender: </label>
+        Male<input type="radio" name="gender"  value="male" required>
+        Female<input type="radio" name="gender"  value="female" required>
+
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" required id="age"><br> <br>
+
+        <label for="DOB">Date Of Birth</label>
+        <input type="date" name="Date Of Birth" id="DOB"><br><br>
+
+        <label for ="color">Favorite Color </label>
+        <input type="color" name="clr" id="color"> <br><br>
+
+        <label for="country">Which Country </label>
+        <select id="country">
+            <option value="IND">INDIA</option>
+            <option value="USA">UNITED STATES</option>
+            <option value="UK">UNITED KINGDOM</option>
+            <option value="SL">SRI LANKA</option>
+            <option value="PAK">PAKISTAN</option>
+            <option value="CHI">CHINA</option>
+        </select>
+
+    </fieldset>
+</form>
+<br><br>
+<form>
+    <fieldset>
+        <legend>Your Indicators:</legend>
+
+        <label for ="Height">Height:</label>
+        <span class=clr1>SHORT</span>
+        <input type="range" name="height" min="0" max="100" id="Height"> <span class =clr2>TALL</span><br>
+
+        <label for ="salary">Salary: </label>
+        <span class=clr1>POOR</span>
+        <input type="range" name="salary" min="0" max="100" id="Salary"><span class=clr2>RICH</span>
+    </fieldset>
+</form>
+
+<br><br>
+<form>
+    <fieldset>
+        <legend>Your Contact Information:</legend>   <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required> <br> <br>
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile"> <br>  <br>
+        <label for="address">Address:</label>
+        <textarea id="address" rows="2" cols="20" name="address"></textarea> <br><br>
+
+        <label>
+            Method To Contact you:</label>
+
+        Email<input type="checkbox" name="email" value="email1">
+        Watsapp<input type="checkbox" name="watsapp" value="watsapp">
+        In-App chat<input type="checkbox" name="in-app" value="in-app">
+
+
+    </fieldset>
+</form> <br>
+<input type="button" value="submit">
+
+<script>
+    var loadFile = function(event) {
+        var Preview = document.getElementById('Preview');
+        Preview.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+</body>
+</html>
